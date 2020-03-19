@@ -1,4 +1,4 @@
-const POKE_CACHE = "pokemon_cache";
+const POKE_CACHE = "v1_pokemon_cache";
 const ELEMETS_TO_CACHE = [
     "./",
     "./script.js",
@@ -34,7 +34,7 @@ self.addEventListener("install", (event) => {
 // Activando el serviceWorker
 self.addEventListener("activate", (event) => {
     console.log("📚 Activando");
-    const WHITE_LIST = [ELEMETS_TO_CACHE];
+    const WHITE_LIST = [POKE_CACHE];
     event
         .waitUntil(
             caches
