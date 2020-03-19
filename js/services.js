@@ -9,7 +9,7 @@
       function all() {
         var deferred = $q.defer();
 
-        $http.get('/pokemons.json')
+        $http.get('/workshop-pwa/pokemons.json')
           .success(function (data) {
             deferred.resolve(data);
           });
