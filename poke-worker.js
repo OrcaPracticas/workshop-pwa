@@ -2,18 +2,18 @@ const POKE_CACHE = "pokemon_cache";
 const ELEMETS_TO_CACHE = [
     "./",
     "./script.js"
-    "./js/lib/underscore-min.js",
-    "./js/lib/angular.min.js",
-    "./js/lib/angular-route.min.js",
-    "./js/app.js",
-    "./js/controllers.js",
-    "./js/directives.js",
-    "./js/filters.js",
-    "./js/services.js",
-    "./css/bootstrap.min.css",
-    "./css/bootstrap-theme.min.css",
-    "./css/main.css",
-    "./img/icons/icon_512x512.png"
+    "https://orcapracticas.github.io/workshop-pwa/js/lib/underscore-min.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/lib/angular.min.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/lib/angular-route.min.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/app.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/controllers.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/directives.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/filters.js",
+    "https://orcapracticas.github.io/workshop-pwa/js/services.js",
+    "https://orcapracticas.github.io/workshop-pwa/css/bootstrap.min.css",
+    "https://orcapracticas.github.io/workshop-pwa/css/bootstrap-theme.min.css",
+    "https://orcapracticas.github.io/workshop-pwa/css/main.css",
+    "https://orcapracticas.github.io/workshop-pwa/img/icons/icon_512x512.png"
 ];
 
 
