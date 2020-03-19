@@ -53,7 +53,7 @@ self.addEventListener("activate", (event) => {
 // Cuando se recupoera la URL
 self.addEventListener("fetch", (event) => {
     event
-        .responseWith(
+        .respondWith(
             caches
                 .match(event.request)
                     .then((response) => {
