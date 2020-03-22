@@ -1,4 +1,6 @@
+// nombre del registro de cache
 const POKE_CACHE = "v1_pokemon_cache";
+// listado de lo que se carga en cache
 const ELEMETS_TO_CACHE = [
     "./",
     "./script.js",
@@ -50,7 +52,7 @@ self.addEventListener("activate", (event) => {
         )
 });
 
-// Cuando se recupoera la URL
+// Cuando el navegador esta recuperando la URL
 self.addEventListener("fetch", (event) => {
     event
         .respondWith(
