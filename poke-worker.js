@@ -1,19 +1,65 @@
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js");
+// nombre del registro de cache
+const POKE_CACHE = "v1_pokemon_cache";
+// listado de lo que se carga en cache
+const ELEMETS_TO_CACHE = [
+    "./",
+    "./script.js",
+    "./js/lib/underscore-min.js",
+    "./js/lib/angular.min.js",
+    "./js/lib/angular-route.min.js",
+    "./js/app.js",
+    "./js/controllers.js",
+    "./js/directives.js",
+    "./js/filters.js",
+    "./js/services.js",
+    "./css/bootstrap.min.css",
+    "./css/bootstrap-theme.min.css",
+    "./css/main.css",
+    "./img/icons/icon_512x512.png",
+];
 
-if (workbox) {
-    workbox.core.setCacheNameDetails({
-        prefix: "my-app",
-        suffix: "v1",
-        precache: "precache-cache",
-        runtime: "runtime-cache",
-    });
 
-    workbox.routing.registerRoute(
-        /\.(?:js|css)$/, // Todos los archivos con extensión js o css
-        workbox.strategies.cacheFirst({
-            cacheName: workbox.core.cacheNames.precache, // nombre de la cache donde queremos guardar el recurso
-        }),
-    );
-} else {
-    console.log("Boo! Workbox didn't load 😬");
-}
+// Se instala el servicesWorker
+self.addEventListener("install", (event) => {
+    console.log("📦 Instalando cache");
+    event
+        .waitUntil(
+            caches.open(POKE_CACHE)
+                .then((cache) => cache
+                    .addAll(ELEMETS_TO_CACHE)
+                    .then(() => self.skipWaiting()))
+                .catch((error) => console.error("Fallo registrando cache =>", error)),
+        );
+});
+
+// Activando el serviceWorker
+self.addEventListener("activate", (event) => {
+    console.log("📚 Activando");
+    const WHITE_LIST = [POKE_CACHE];
+    event
+        .waitUntil(
+            caches
+                .keys()
+                .then((cacheNames) => Promise.all(
+                    cacheNames.map((cacheName) => {
+                        if (WHITE_LIST.indexOf(cacheName) === -1) {
+                            return caches.delete(cacheName);
+                        }
+                    }),
+                ))
+                .then(() => self.clients.claim()),
+        );
+});
+
+// Cuando el navegador esta recuperando la URL
+self.addEventListener("fetch", (event) => {
+    event
+        .respondWith(
+            caches
+                .match(event.request)
+                .then((response) => {
+                    if (response) return response;
+                    return fetch(event.request);
+                }),
+        );
+});
