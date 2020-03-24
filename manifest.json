@@ -2,13 +2,13 @@
     "name": "Pokedex",
     "short_name": "Pokedex",
     "description": "Listado de los 150 pokemons",
-    "background_color": "#a8a878",
+    "background_color": "#a80000",
     "theme_color": "#000000",
+    "lang": "es-MX",
     "orientation": "portrait",
     "display": "standalone",
     "start_url": "./?utm_source=web_app_manifest",
     "scope": "./",
-    "lang": "es-MX",
     "icons": [
         {
             "src": "./img/icons/icon_64x64.png",
