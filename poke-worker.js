@@ -83,6 +83,14 @@ if (workbox) {
             revision,
         },
     ]);
+
+    workbox.routing.registerRoute(
+        /(.*)partials(.*)\.(html)/,
+        new workbox.strategies.CacheFirst({
+            cacheName: "pokemons_partials",
+        }),
+    );
+
 } else {
     log("WorkBox no esta disponible 🤬");
 }
