@@ -11,71 +11,75 @@ if (workbox) {
 
     workbox.precaching.precacheAndRoute([
         {
-            url: "/js/lib/underscore-min.js",
+            url: "/workshop-pwa/pokemons.json",
             revision,
         },
         {
-            url: "/js/lib/angular.min.js",
+            url: "/workshop-pwa/js/lib/underscore-min.js",
             revision,
         },
         {
-            url: "/js/lib/angular-route.min.js",
+            url: "/workshop-pwa/js/lib/angular.min.js",
             revision,
         },
         {
-            url: "/js/app.js",
+            url: "/workshop-pwa/js/lib/angular-route.min.js",
             revision,
         },
         {
-            url: "/js/controllers.js",
+            url: "/workshop-pwa/js/app.js",
             revision,
         },
         {
-            url: "/js/directives.js",
+            url: "/workshop-pwa/js/controllers.js",
             revision,
         },
         {
-            url: "/js/filters.js",
+            url: "/workshop-pwa/js/directives.js",
             revision,
         },
         {
-            url: "/js/services.js",
+            url: "/workshop-pwa/js/filters.js",
             revision,
         },
         {
-            url: "/script.js",
+            url: "/workshop-pwa/js/services.js",
             revision,
         },
         {
-            url: "/css/bootstrap.min.css",
+            url: "/workshop-pwa/script.js",
             revision,
         },
         {
-            url: "/css/bootstrap-theme.min.css",
+            url: "/workshop-pwa/css/bootstrap.min.css",
             revision,
         },
         {
-            url: "/css/main.css",
+            url: "/workshop-pwa/css/bootstrap-theme.min.css",
             revision,
         },
         {
-            url: "/",
+            url: "/workshop-pwa/css/main.css",
             revision,
         },
         {
-            url: "/partials/pokemon-image.html",
+            url: "/workshop-pwa/",
             revision,
         },
         {
-            url: "/partials/pokemon-name.html",
+            url: "/workshop-pwa/partials/pokemon-image.html",
             revision,
         },
         {
-            url: "/partials/pokemon-type.html",
+            url: "/workshop-pwa/partials/pokemon-name.html",
             revision,
         },
         {
-            url: "/views/pokedex.html",
+            url: "/workshop-pwa/partials/pokemon-type.html",
+            revision,
+        },
+        {
+            url: "/workshop-pwa/views/pokedex.html",
             revision,
         },
     ]);
